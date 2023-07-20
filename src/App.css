@@ -1,38 +1,103 @@
+/* App.css */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
 }
 
-.App-link {
-  color: #61dafb;
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  max-width: 400px; /* Increase the max-width for a larger calculator */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.calculator > * {
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  font-size: 24px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.row:hover {
+  background-color: #dcdcdc;
+}
+
+#display {
+  grid-column: 1 / -1;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 32px;
+  background-color: #dcdcdc;
+  border-radius: 5px;
+}
+
+#clear {
+  grid-column: 1 / span 2;
+  background-color: #e57373;
+}
+
+#equals {
+  /* grid-column: 3 / span 2; */
+  background-color: #64b5f6;
+}
+
+/* Styling operators */
+#add,
+#subtract,
+#multiply,
+#divide {
+  background-color: #fdca5c;
+}
+
+/* Styling numbers */
+#zero,
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine {
+  background-color: #e0e0e0;
+}
+
+/* Styling decimal */
+#decimal {
+  background-color: #e0e0e0;
+}
+
+/* Styling AC (clear) */
+#clear {
+  background-color: #e57373;
+}
+
+/* Styling equals */
+#equals {
+  background-color: #64b5f6;
 }
